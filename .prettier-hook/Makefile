@@ -3,10 +3,10 @@ TOOLS: prettier
 .PHONY: install, uninstall
 
 install:
+	echo "Removing ../.git/hooks/pre-commit"
 	rm -f ../.git/hooks/pre-commit
-	mv ../.git/hooks/pre-commit ../.git/hooks/pre-commit.bkp
-	ln -s ../.git/hooks/pre-commit ./bin/pre-commit-prettier.sh
+	echo "Creating symbolic link to ./bin/pre-commit-prettier.sh"
+	ln -s ./bin/pre-commit-prettier.sh ../.git/hooks/pre-commit
 
 uninstall:
-	rm -f	../.git/hooks/pre-commit
-	mv ../.git/hooks/pre-commit.bkp ../.git/hooks/pre-commit
+	echo "Not yet."
